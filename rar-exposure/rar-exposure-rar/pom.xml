@@ -9,5 +9,13 @@
   </parent>
   <artifactId>rar-exposure-rar</artifactId>
   <packaging>rar</packaging>
+  
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>rar-exposure-ra</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
 
 </project>

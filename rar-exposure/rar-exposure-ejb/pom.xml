@@ -10,4 +10,12 @@
   <artifactId>rar-exposure-ejb</artifactId>
   <packaging>ejb</packaging>
 
+  <dependencies>
+    <dependency>
+      <groupId>org.jboss.spec.javax.ejb</groupId>
+      <artifactId>jboss-ejb-api_3.1_spec</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
 </project>
