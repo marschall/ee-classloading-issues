@@ -15,7 +15,7 @@
     <module>annotation-loading-ejb1</module>
     <module>annotation-loading-ejb2</module>
     <module>annotation-loading-war</module>
-    <module>annotation-loading-eaannotation-loading-ear</module>
+    <module>annotation-loading-ear</module>
   </modules>
 
 </project>
