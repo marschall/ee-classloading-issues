@@ -20,7 +20,14 @@ public class AnnotationLoadingServlet extends HttpServlet {
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     resp.setContentType("text/plain");
     PrintWriter writer = resp.getWriter();
-    for (Object each : ejb.getAnnotations()) {
+    Object[] annotations;
+    try {
+      annotations = ejb.getAnnotations();
+    } catch (RuntimeException | Error e) {
+      e.printStackTrace(writer);
+      return;
+    }
+    for (Object each : annotations) {
       writer.println(each);
     }
   }
