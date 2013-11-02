@@ -9,12 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.github.marschall.eeclassloadingissues.annotationloading.ejb2.Ejb2;
+import com.github.marschall.eeclassloadingissues.annotationloading.ejb2.IEjb2;
 
 public class AnnotationLoadingServlet extends HttpServlet {
   
   @EJB
-  private Ejb2 ejb;
+  private IEjb2 ejb;
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

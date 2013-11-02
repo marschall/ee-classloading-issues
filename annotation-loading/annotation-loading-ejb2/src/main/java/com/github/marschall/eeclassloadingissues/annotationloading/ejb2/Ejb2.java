@@ -1,12 +1,11 @@
 package com.github.marschall.eeclassloadingissues.annotationloading.ejb2;
 
-import com.github.marschall.eeclassloadingissues.annotationloading.lib.Annotation;
 
-@Annotation({AnnoationValue2.class, AnnoationValue2.class})
-public class Ejb2 {
+public class Ejb2 implements IEjb2 {
   
+  @Override
   public Object[] getAnnotations() {
-    return Ejb2.class.getAnnotations();
+    return AnnotatedClass.class.getAnnotations();
   }
 
 }
