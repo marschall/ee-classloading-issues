@@ -21,15 +21,29 @@ public class RarExposureServlet extends HttpServlet {
     resp.setContentType("text/plain");
     PrintWriter writer = resp.getWriter();
     
-    writer.print("TCCL: ");
-    if (loadingEjb.isClassAvailableTccl()) {
+    writer.print("Library TCCL: ");
+    if (loadingEjb.isLibraryClassAvailableTccl()) {
       writer.println("OK");
     } else {
       writer.println("NOK");
     }
     
-    writer.print("This: ");
-    if (loadingEjb.isClassAvailableThis()) {
+    writer.print("Library This: ");
+    if (loadingEjb.isLibraryClassAvailableThis()) {
+      writer.println("OK");
+    } else {
+      writer.println("NOK");
+    }
+    
+    writer.print("Adapter TCCL: ");
+    if (loadingEjb.isAdapterClassAvailableTccl()) {
+      writer.println("OK");
+    } else {
+      writer.println("NOK");
+    }
+    
+    writer.print("Adapter This: ");
+    if (loadingEjb.isAdapterClassAvailableThis()) {
       writer.println("OK");
     } else {
       writer.println("NOK");
