@@ -8,10 +8,19 @@ import javax.ejb.Singleton;
 @ConcurrencyManagement(ConcurrencyManagementType.BEAN)
 public class LoadingEJb {
 
-  public boolean isClassAvailable() {
+  public boolean isClassAvailableTccl() {
     ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+    return isClassVisible(classLoader);
+  }
+  
+  public boolean isClassAvailableThis() {
+    ClassLoader classLoader = this.getClass().getClassLoader();
+    return isClassVisible(classLoader);
+  }
+
+  private boolean isClassVisible(ClassLoader classLoader) {
     try {
-      Class.forName("LibraryClass", true, classLoader);
+      Class.forName("com.github.marschall.eeclassloadingissues.rarexposure.lib.LibraryClass", true, classLoader);
       return true;
     } catch (ClassNotFoundException e) {
       return false;

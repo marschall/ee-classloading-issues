@@ -20,10 +20,19 @@ public class RarExposureServlet extends HttpServlet {
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     resp.setContentType("text/plain");
     PrintWriter writer = resp.getWriter();
-    if (loadingEjb.isClassAvailable()) {
-      writer.print("OK");
+    
+    writer.print("TCCL: ");
+    if (loadingEjb.isClassAvailableTccl()) {
+      writer.println("OK");
     } else {
-      writer.print("NOK");
+      writer.println("NOK");
+    }
+    
+    writer.print("This: ");
+    if (loadingEjb.isClassAvailableThis()) {
+      writer.println("OK");
+    } else {
+      writer.println("NOK");
     }
   }
 
