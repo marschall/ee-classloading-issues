@@ -34,7 +34,7 @@ public class LoadingEJb {
 
   private boolean isClassVisible(ClassLoader classLoader, String className) {
     try {
-      Class.forName(className, true, classLoader);
+      classLoader.loadClass(className);
       return true;
     } catch (ClassNotFoundException e) {
       return false;
